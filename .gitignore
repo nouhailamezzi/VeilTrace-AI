@@ -1,0 +1,35 @@
+# Log data may contain sensitive operational information.
+/data/raw/
+/data/reference/
+/data/processed/*.jsonl
+/data/synthetic/
+*.log
+*.log.*
+private_logs/
+private-logs/
+
+# Local secrets and environment configuration.
+.env
+.env.*
+!.env.example
+*.secret
+secrets/
+credentials/
+credentials.*
+credential.*
+service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+
+# Python-generated files and local environments.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
