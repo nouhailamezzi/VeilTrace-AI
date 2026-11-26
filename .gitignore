@@ -3,6 +3,8 @@
 /data/reference/
 /data/processed/*.jsonl
 /data/synthetic/
+/data/privacy/
+/data/processed/privacy/
 *.log
 *.log.*
 private_logs/
@@ -26,6 +28,9 @@ id_rsa
 id_dsa
 id_ecdsa
 id_ed25519
+privacy_mappings/
+*.pseudonym-map.json
+*.privacy-map.json
 
 # Python-generated files and local environments.
 __pycache__/

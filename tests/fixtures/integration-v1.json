@@ -1,0 +1,1083 @@
+{
+  "cloud_payload": {
+    "accepted_payloads": [
+      {
+        "category": "security",
+        "entities": {
+          "source_ip": "IP_A5D3C0DE_001",
+          "username": "USER_A5D3C0DE_001"
+        },
+        "event_count": 2,
+        "evidence_summary": "Suspicious privilege escalation indicators: Correlated privilege escalation, sensitive-target, and denial or elevated-context evidence requires analyst review.",
+        "relative_time": {
+          "basis": "source_relative_wall_clock",
+          "delta_from_previous_seconds": 20,
+          "elapsed_seconds": 20
+        },
+        "rule_id": "R05",
+        "schema_version": "1",
+        "severity": "high",
+        "source": "Linux"
+      },
+      {
+        "category": "security",
+        "entities": {
+          "source_ip": "IP_A5D3C0DE_002"
+        },
+        "event_count": 5,
+        "evidence_summary": "Repeated failed logins from one source: Observed 5 distinct failed authentication attempt(s) from one source in the configured time window.",
+        "relative_time": {
+          "basis": "source_relative_wall_clock",
+          "delta_from_previous_seconds": 40,
+          "elapsed_seconds": 760
+        },
+        "rule_id": "R01",
+        "schema_version": "1",
+        "severity": "medium",
+        "source": "OpenSSH"
+      },
+      {
+        "category": "security",
+        "entities": {
+          "source_ip": "IP_A5D3C0DE_003"
+        },
+        "event_count": 5,
+        "evidence_summary": "Repeated failed logins from one source: Observed 5 distinct failed authentication attempt(s) from one source in the configured time window.",
+        "relative_time": {
+          "basis": "source_relative_wall_clock",
+          "delta_from_previous_seconds": 30,
+          "elapsed_seconds": 1920
+        },
+        "rule_id": "R01",
+        "schema_version": "1",
+        "severity": "medium",
+        "source": "OpenSSH"
+      },
+      {
+        "category": "security",
+        "entities": {
+          "source_ip": "IP_A5D3C0DE_004",
+          "username": "USER_A5D3C0DE_002"
+        },
+        "event_count": 4,
+        "evidence_summary": "Successful login following repeated failures: A successful authentication followed repeated recent failure attempts for the same account and source.",
+        "relative_time": {
+          "basis": "source_relative_wall_clock",
+          "delta_from_previous_seconds": 30,
+          "elapsed_seconds": 1290
+        },
+        "rule_id": "R02",
+        "schema_version": "1",
+        "severity": "high",
+        "source": "OpenSSH"
+      },
+      {
+        "category": "security",
+        "entities": {
+          "source_ip": "IP_A5D3C0DE_003"
+        },
+        "event_count": 5,
+        "evidence_summary": "Authentication failures across multiple accounts: Observed 5 authentication failure(s) across multiple accounts from one source.",
+        "relative_time": {
+          "basis": "source_relative_wall_clock",
+          "delta_from_previous_seconds": 30,
+          "elapsed_seconds": 1920
+        },
+        "rule_id": "R04",
+        "schema_version": "1",
+        "severity": "high",
+        "source": "OpenSSH"
+      }
+    ],
+    "rejections": [
+      {
+        "case": "missing_authorization",
+        "reason": "explicit cloud authorization is required",
+        "rejected": true
+      },
+      {
+        "case": "residual_sensitive_information",
+        "reason": "sensitive content remains in cloud payload",
+        "rejected": true
+      }
+    ]
+  },
+  "detection": {
+    "expected_alerts": [
+      {
+        "alert_id": "alert-r05-0888aa3ce6e51cef",
+        "category": "security",
+        "description": "Correlated privilege escalation, sensitive-target, and denial or elevated-context evidence requires analyst review.",
+        "detection_method": "deterministic_rule",
+        "event_count": 2,
+        "evidence_event_ids": [
+          "demo-event-0017",
+          "demo-event-0018"
+        ],
+        "recommended_action": "Review privilege audit records and the requested target; verify authorization before taking action.",
+        "rule_id": "R05",
+        "rule_name": "Suspicious privilege escalation indicators",
+        "severity": "high",
+        "source": "Linux",
+        "source_ip": "192.0.2.51",
+        "timestamp": "2025-02-01T00:40:20+00:00",
+        "timestamp_quality": "complete_with_timezone",
+        "username": "build-bot"
+      },
+      {
+        "alert_id": "alert-r01-aeaa15c54c1ff1ed",
+        "category": "security",
+        "description": "Observed 5 distinct failed authentication attempt(s) from one source in the configured time window.",
+        "detection_method": "deterministic_rule",
+        "event_count": 5,
+        "evidence_event_ids": [
+          "demo-event-0003",
+          "demo-event-0004",
+          "demo-event-0005",
+          "demo-event-0006",
+          "demo-event-0007"
+        ],
+        "recommended_action": "Review the source and authentication evidence; apply access controls only after confirming the activity.",
+        "rule_id": "R01",
+        "rule_name": "Repeated failed logins from one source",
+        "severity": "medium",
+        "source": "OpenSSH",
+        "source_ip": "192.0.2.21",
+        "timestamp": "2025-02-01T00:12:40+00:00",
+        "timestamp_quality": "complete_with_timezone",
+        "username": null
+      },
+      {
+        "alert_id": "alert-r01-6fbe792f2538abde",
+        "category": "security",
+        "description": "Observed 5 distinct failed authentication attempt(s) from one source in the configured time window.",
+        "detection_method": "deterministic_rule",
+        "event_count": 5,
+        "evidence_event_ids": [
+          "demo-event-0012",
+          "demo-event-0013",
+          "demo-event-0014",
+          "demo-event-0015",
+          "demo-event-0016"
+        ],
+        "recommended_action": "Review the source and authentication evidence; apply access controls only after confirming the activity.",
+        "rule_id": "R01",
+        "rule_name": "Repeated failed logins from one source",
+        "severity": "medium",
+        "source": "OpenSSH",
+        "source_ip": "203.0.113.42",
+        "timestamp": "2025-02-01T00:32:00+00:00",
+        "timestamp_quality": "complete_with_timezone",
+        "username": null
+      },
+      {
+        "alert_id": "alert-r02-2b7fd47ad9c95865",
+        "category": "security",
+        "description": "A successful authentication followed repeated recent failure attempts for the same account and source.",
+        "detection_method": "deterministic_rule",
+        "event_count": 4,
+        "evidence_event_ids": [
+          "demo-event-0008",
+          "demo-event-0009",
+          "demo-event-0010",
+          "demo-event-0011"
+        ],
+        "recommended_action": "Review the account and preceding failures promptly; verify the successful login with the account owner.",
+        "rule_id": "R02",
+        "rule_name": "Successful login following repeated failures",
+        "severity": "high",
+        "source": "OpenSSH",
+        "source_ip": "198.51.100.30",
+        "timestamp": "2025-02-01T00:21:30+00:00",
+        "timestamp_quality": "complete_with_timezone",
+        "username": "returning-demo"
+      },
+      {
+        "alert_id": "alert-r04-47bdb70fd6808440",
+        "category": "security",
+        "description": "Observed 5 authentication failure(s) across multiple accounts from one source.",
+        "detection_method": "deterministic_rule",
+        "event_count": 5,
+        "evidence_event_ids": [
+          "demo-event-0012",
+          "demo-event-0013",
+          "demo-event-0014",
+          "demo-event-0015",
+          "demo-event-0016"
+        ],
+        "recommended_action": "Review for password-spraying behavior and apply proportionate authentication protections if confirmed.",
+        "rule_id": "R04",
+        "rule_name": "Authentication failures across multiple accounts",
+        "severity": "high",
+        "source": "OpenSSH",
+        "source_ip": "203.0.113.42",
+        "timestamp": "2025-02-01T00:32:00+00:00",
+        "timestamp_quality": "complete_with_timezone",
+        "username": null
+      }
+    ],
+    "input_events": [
+      {
+        "event_id": "demo-event-0001",
+        "event_type": "authentication",
+        "message": "Accepted publickey for staff-demo-1 from 192.0.2.10 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-normal.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 0,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": null,
+            "elapsed_seconds": 0,
+            "segment": 0,
+            "sequence_index": 1,
+            "status": "segment_start"
+          },
+          "second": 0,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:00:00+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "192.0.2.10",
+        "status": "success",
+        "timestamp": "2025-02-01T00:00:00+00:00",
+        "username": "staff-demo-1"
+      },
+      {
+        "event_id": "demo-event-0002",
+        "event_type": "authentication",
+        "message": "Accepted publickey for staff-demo-2 from 192.0.2.11 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-normal.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 0,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 30,
+            "elapsed_seconds": 30,
+            "segment": 0,
+            "sequence_index": 2,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 30,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:00:30+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "192.0.2.11",
+        "status": "success",
+        "timestamp": "2025-02-01T00:00:30+00:00",
+        "username": "staff-demo-2"
+      },
+      {
+        "event_id": "demo-event-0003",
+        "event_type": "authentication",
+        "message": "Failed password for operator-demo from 192.0.2.21 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-repeat.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 10,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 570,
+            "elapsed_seconds": 600,
+            "segment": 0,
+            "sequence_index": 3,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 0,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:10:00+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "192.0.2.21",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:10:00+00:00",
+        "username": "operator-demo"
+      },
+      {
+        "event_id": "demo-event-0004",
+        "event_type": "authentication",
+        "message": "Failed password for operator-demo from 192.0.2.21 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-repeat.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 10,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 40,
+            "elapsed_seconds": 640,
+            "segment": 0,
+            "sequence_index": 4,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 40,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:10:40+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "192.0.2.21",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:10:40+00:00",
+        "username": "operator-demo"
+      },
+      {
+        "event_id": "demo-event-0005",
+        "event_type": "authentication",
+        "message": "Failed password for operator-demo from 192.0.2.21 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-repeat.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 11,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 40,
+            "elapsed_seconds": 680,
+            "segment": 0,
+            "sequence_index": 5,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 20,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:11:20+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "192.0.2.21",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:11:20+00:00",
+        "username": "operator-demo"
+      },
+      {
+        "event_id": "demo-event-0006",
+        "event_type": "authentication",
+        "message": "Failed password for operator-demo from 192.0.2.21 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-repeat.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 12,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 40,
+            "elapsed_seconds": 720,
+            "segment": 0,
+            "sequence_index": 6,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 0,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:12:00+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "192.0.2.21",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:12:00+00:00",
+        "username": "operator-demo"
+      },
+      {
+        "event_id": "demo-event-0007",
+        "event_type": "authentication",
+        "message": "Failed password for operator-demo from 192.0.2.21 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-repeat.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 12,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 40,
+            "elapsed_seconds": 760,
+            "segment": 0,
+            "sequence_index": 7,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 40,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:12:40+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "192.0.2.21",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:12:40+00:00",
+        "username": "operator-demo"
+      },
+      {
+        "event_id": "demo-event-0008",
+        "event_type": "authentication",
+        "message": "Failed password for returning-demo from 198.51.100.30 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-recovery.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 20,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 440,
+            "elapsed_seconds": 1200,
+            "segment": 0,
+            "sequence_index": 8,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 0,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:20:00+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "198.51.100.30",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:20:00+00:00",
+        "username": "returning-demo"
+      },
+      {
+        "event_id": "demo-event-0009",
+        "event_type": "authentication",
+        "message": "Failed password for returning-demo from 198.51.100.30 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-recovery.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 20,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 30,
+            "elapsed_seconds": 1230,
+            "segment": 0,
+            "sequence_index": 9,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 30,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:20:30+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "198.51.100.30",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:20:30+00:00",
+        "username": "returning-demo"
+      },
+      {
+        "event_id": "demo-event-0010",
+        "event_type": "authentication",
+        "message": "Failed password for returning-demo from 198.51.100.30 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-recovery.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 21,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 30,
+            "elapsed_seconds": 1260,
+            "segment": 0,
+            "sequence_index": 10,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 0,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:21:00+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "198.51.100.30",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:21:00+00:00",
+        "username": "returning-demo"
+      },
+      {
+        "event_id": "demo-event-0011",
+        "event_type": "authentication",
+        "message": "Accepted publickey for returning-demo from 198.51.100.30 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-recovery.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 21,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 30,
+            "elapsed_seconds": 1290,
+            "segment": 0,
+            "sequence_index": 11,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 30,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:21:30+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "198.51.100.30",
+        "status": "success",
+        "timestamp": "2025-02-01T00:21:30+00:00",
+        "username": "returning-demo"
+      },
+      {
+        "event_id": "demo-event-0012",
+        "event_type": "authentication",
+        "message": "Failed password for spray-demo-1 from 203.0.113.42 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-spray.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 30,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 510,
+            "elapsed_seconds": 1800,
+            "segment": 0,
+            "sequence_index": 12,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 0,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:30:00+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "203.0.113.42",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:30:00+00:00",
+        "username": "spray-demo-1"
+      },
+      {
+        "event_id": "demo-event-0013",
+        "event_type": "authentication",
+        "message": "Failed password for spray-demo-2 from 203.0.113.42 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-spray.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 30,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 30,
+            "elapsed_seconds": 1830,
+            "segment": 0,
+            "sequence_index": 13,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 30,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:30:30+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "203.0.113.42",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:30:30+00:00",
+        "username": "spray-demo-2"
+      },
+      {
+        "event_id": "demo-event-0014",
+        "event_type": "authentication",
+        "message": "Failed password for spray-demo-3 from 203.0.113.42 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-spray.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 31,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 30,
+            "elapsed_seconds": 1860,
+            "segment": 0,
+            "sequence_index": 14,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 0,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:31:00+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "203.0.113.42",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:31:00+00:00",
+        "username": "spray-demo-3"
+      },
+      {
+        "event_id": "demo-event-0015",
+        "event_type": "authentication",
+        "message": "Failed password for spray-demo-4 from 203.0.113.42 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-spray.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 31,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 30,
+            "elapsed_seconds": 1890,
+            "segment": 0,
+            "sequence_index": 15,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 30,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:31:30+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "203.0.113.42",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:31:30+00:00",
+        "username": "spray-demo-4"
+      },
+      {
+        "event_id": "demo-event-0016",
+        "event_type": "authentication",
+        "message": "Failed password for spray-demo-5 from 203.0.113.42 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-spray.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 32,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 30,
+            "elapsed_seconds": 1920,
+            "segment": 0,
+            "sequence_index": 16,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 0,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:32:00+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "203.0.113.42",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:32:00+00:00",
+        "username": "spray-demo-5"
+      },
+      {
+        "event_id": "demo-event-0017",
+        "event_type": "authentication",
+        "message": "sudo: pam_unix(sudo:auth): authentication failure; user=build-bot; COMMAND=/usr/bin/cat /etc/shadow",
+        "metadata": {
+          "day": 1,
+          "hostname": "linux-privilege.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 40,
+          "month": 2,
+          "pid": null,
+          "process": "sudo",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": null,
+            "elapsed_seconds": 0,
+            "segment": 0,
+            "sequence_index": 1,
+            "status": "segment_start"
+          },
+          "second": 0,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:40:00+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "Linux",
+        "source_ip": "192.0.2.51",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:40:00+00:00",
+        "username": "build-bot"
+      },
+      {
+        "event_id": "demo-event-0018",
+        "event_type": "authentication",
+        "message": "sudo: user build-bot is not in sudoers; COMMAND=/usr/bin/cat /etc/shadow",
+        "metadata": {
+          "day": 1,
+          "hostname": "linux-privilege.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 40,
+          "month": 2,
+          "pid": null,
+          "process": "sudo",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 20,
+            "elapsed_seconds": 20,
+            "segment": 0,
+            "sequence_index": 2,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 20,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:40:20+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "Linux",
+        "source_ip": "192.0.2.51",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:40:20+00:00",
+        "username": "build-bot"
+      },
+      {
+        "event_id": "demo-event-0019",
+        "event_type": "authentication",
+        "message": "Failed password for privacy-demo-user from 198.51.100.77 access_token=FICTIONAL-DEMO-TOKEN-NOT-VALID",
+        "metadata": {
+          "day": 1,
+          "hostname": "privacy-gateway.example.test",
+          "hour": 0,
+          "limitations": [],
+          "minute": 50,
+          "month": 2,
+          "pid": null,
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "relative_time": {
+            "anchor_sequence_index": 1,
+            "basis": "source_relative_wall_clock",
+            "delta_from_previous_seconds": 1080,
+            "elapsed_seconds": 3000,
+            "segment": 0,
+            "sequence_index": 17,
+            "status": "timezone_aware_wall_clock_advance"
+          },
+          "second": 0,
+          "severity": null,
+          "timestamp_precision": "second",
+          "timestamp_raw": "2025-02-01T00:50:00+00:00",
+          "timezone": "UTC",
+          "year": 2025
+        },
+        "source": "OpenSSH",
+        "source_ip": "198.51.100.77",
+        "status": "failure",
+        "timestamp": "2025-02-01T00:50:00+00:00",
+        "username": "privacy-demo-user"
+      }
+    ],
+    "malformed_event_count": 0
+  },
+  "fixture_version": "1",
+  "parser_cases": [
+    {
+      "expected_event": {
+        "event_id": "openssh-000001",
+        "event_type": "authentication",
+        "message": "Failed password for parser-demo from 192.0.2.8 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "ssh-demo.example.test",
+          "hour": 0,
+          "limitations": [
+            "source timestamp omits year and timezone; normalized timestamp is null"
+          ],
+          "minute": 0,
+          "month": 2,
+          "pid": "100",
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "second": 0,
+          "severity": null,
+          "timestamp_precision": "month-day-time",
+          "timestamp_raw": "Feb 1 00:00:00",
+          "timezone": null,
+          "year": null
+        },
+        "source": "OpenSSH",
+        "source_ip": "192.0.2.8",
+        "status": "failure",
+        "timestamp": null,
+        "username": "parser-demo"
+      },
+      "raw_line": "Feb  1 00:00:00 ssh-demo.example.test sshd[100]: Failed password for parser-demo from 192.0.2.8 port 22 ssh2\n",
+      "source": "OpenSSH"
+    },
+    {
+      "expected_event": {
+        "event_id": "linux-000002",
+        "event_type": "authentication",
+        "message": "Accepted publickey for parser-demo from 198.51.100.8 port 22 ssh2",
+        "metadata": {
+          "day": 1,
+          "hostname": "linux-demo.example.test",
+          "hour": 0,
+          "limitations": [
+            "source timestamp omits year and timezone; normalized timestamp is null"
+          ],
+          "minute": 0,
+          "month": 2,
+          "pid": "101",
+          "process": "sshd",
+          "raw_parse_matched": true,
+          "second": 1,
+          "severity": null,
+          "timestamp_precision": "month-day-time",
+          "timestamp_raw": "Feb 1 00:00:01",
+          "timezone": null,
+          "year": null
+        },
+        "source": "Linux",
+        "source_ip": "198.51.100.8",
+        "status": "success",
+        "timestamp": null,
+        "username": "parser-demo"
+      },
+      "raw_line": "Feb  1 00:00:01 linux-demo.example.test sshd[101]: Accepted publickey for parser-demo from 198.51.100.8 port 22 ssh2\n",
+      "source": "Linux"
+    },
+    {
+      "expected_event": {
+        "event_id": "apache-000003",
+        "event_type": "web_server_error",
+        "message": "fictional worker failed",
+        "metadata": {
+          "day": 2,
+          "hostname": null,
+          "hour": 0,
+          "limitations": [
+            "timestamp has no timezone in source; normalized value is timezone-naive"
+          ],
+          "minute": 0,
+          "month": 2,
+          "pid": null,
+          "process": null,
+          "raw_parse_matched": true,
+          "second": 2,
+          "severity": "error",
+          "timestamp_precision": "second",
+          "timestamp_raw": "Sun Feb 02 00:00:02 2025",
+          "timezone": null,
+          "year": 2025
+        },
+        "source": "Apache",
+        "source_ip": null,
+        "status": null,
+        "timestamp": "2025-02-02T00:00:02",
+        "username": null
+      },
+      "raw_line": "[Sun Feb 02 00:00:02 2025] [error] fictional worker failed\n",
+      "source": "Apache"
+    }
+  ],
+  "privacy": {
+    "expected_sanitized_event": {
+      "event_id": "demo-event-0019",
+      "event_type": "authentication",
+      "message": "Failed password for USER_A5D3C0DE_001 from IP_A5D3C0DE_001 access_token=[REDACTED_SECRET]",
+      "metadata": {
+        "day": 1,
+        "hostname": "HOST_A5D3C0DE_001",
+        "hour": 0,
+        "limitations": [],
+        "minute": 50,
+        "month": 2,
+        "pid": null,
+        "process": "sshd",
+        "raw_parse_matched": true,
+        "relative_time": {
+          "anchor_sequence_index": 1,
+          "basis": "source_relative_wall_clock",
+          "delta_from_previous_seconds": 1080,
+          "elapsed_seconds": 3000,
+          "segment": 0,
+          "sequence_index": 17,
+          "status": "timezone_aware_wall_clock_advance"
+        },
+        "second": 0,
+        "severity": null,
+        "timestamp_precision": "second",
+        "timestamp_raw": "2025-02-01T00:50:00+00:00",
+        "timezone": "UTC",
+        "year": 2025
+      },
+      "source": "OpenSSH",
+      "source_ip": "IP_A5D3C0DE_001",
+      "status": "failure",
+      "timestamp": "2025-02-01T00:50:00+00:00",
+      "username": "USER_A5D3C0DE_001"
+    },
+    "input_event": {
+      "event_id": "demo-event-0019",
+      "event_type": "authentication",
+      "message": "Failed password for privacy-demo-user from 198.51.100.77 access_token=FICTIONAL-DEMO-TOKEN-NOT-VALID",
+      "metadata": {
+        "day": 1,
+        "hostname": "privacy-gateway.example.test",
+        "hour": 0,
+        "limitations": [],
+        "minute": 50,
+        "month": 2,
+        "pid": null,
+        "process": "sshd",
+        "raw_parse_matched": true,
+        "relative_time": {
+          "anchor_sequence_index": 1,
+          "basis": "source_relative_wall_clock",
+          "delta_from_previous_seconds": 1080,
+          "elapsed_seconds": 3000,
+          "segment": 0,
+          "sequence_index": 17,
+          "status": "timezone_aware_wall_clock_advance"
+        },
+        "second": 0,
+        "severity": null,
+        "timestamp_precision": "second",
+        "timestamp_raw": "2025-02-01T00:50:00+00:00",
+        "timezone": "UTC",
+        "year": 2025
+      },
+      "source": "OpenSSH",
+      "source_ip": "198.51.100.77",
+      "status": "failure",
+      "timestamp": "2025-02-01T00:50:00+00:00",
+      "username": "privacy-demo-user"
+    }
+  }
+}

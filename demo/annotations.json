@@ -1,0 +1,116 @@
+[
+  {
+    "event_id": "demo-event-0001",
+    "ground_truth": "benign",
+    "scenario_id": "normal-auth",
+    "scenario_type": "normal_authentication"
+  },
+  {
+    "event_id": "demo-event-0002",
+    "ground_truth": "benign",
+    "scenario_id": "normal-auth",
+    "scenario_type": "normal_authentication"
+  },
+  {
+    "event_id": "demo-event-0003",
+    "ground_truth": "suspicious",
+    "scenario_id": "repeated-failures",
+    "scenario_type": "repeated_failed_logins"
+  },
+  {
+    "event_id": "demo-event-0004",
+    "ground_truth": "suspicious",
+    "scenario_id": "repeated-failures",
+    "scenario_type": "repeated_failed_logins"
+  },
+  {
+    "event_id": "demo-event-0005",
+    "ground_truth": "suspicious",
+    "scenario_id": "repeated-failures",
+    "scenario_type": "repeated_failed_logins"
+  },
+  {
+    "event_id": "demo-event-0006",
+    "ground_truth": "suspicious",
+    "scenario_id": "repeated-failures",
+    "scenario_type": "repeated_failed_logins"
+  },
+  {
+    "event_id": "demo-event-0007",
+    "ground_truth": "suspicious",
+    "scenario_id": "repeated-failures",
+    "scenario_type": "repeated_failed_logins"
+  },
+  {
+    "event_id": "demo-event-0008",
+    "ground_truth": "suspicious",
+    "scenario_id": "failure-then-success",
+    "scenario_type": "success_after_repeated_failures"
+  },
+  {
+    "event_id": "demo-event-0009",
+    "ground_truth": "suspicious",
+    "scenario_id": "failure-then-success",
+    "scenario_type": "success_after_repeated_failures"
+  },
+  {
+    "event_id": "demo-event-0010",
+    "ground_truth": "suspicious",
+    "scenario_id": "failure-then-success",
+    "scenario_type": "success_after_repeated_failures"
+  },
+  {
+    "event_id": "demo-event-0011",
+    "ground_truth": "suspicious",
+    "scenario_id": "failure-then-success",
+    "scenario_type": "success_after_repeated_failures"
+  },
+  {
+    "event_id": "demo-event-0012",
+    "ground_truth": "suspicious",
+    "scenario_id": "password-spray",
+    "scenario_type": "password_spraying_indicator"
+  },
+  {
+    "event_id": "demo-event-0013",
+    "ground_truth": "suspicious",
+    "scenario_id": "password-spray",
+    "scenario_type": "password_spraying_indicator"
+  },
+  {
+    "event_id": "demo-event-0014",
+    "ground_truth": "suspicious",
+    "scenario_id": "password-spray",
+    "scenario_type": "password_spraying_indicator"
+  },
+  {
+    "event_id": "demo-event-0015",
+    "ground_truth": "suspicious",
+    "scenario_id": "password-spray",
+    "scenario_type": "password_spraying_indicator"
+  },
+  {
+    "event_id": "demo-event-0016",
+    "ground_truth": "suspicious",
+    "scenario_id": "password-spray",
+    "scenario_type": "password_spraying_indicator"
+  },
+  {
+    "event_id": "demo-event-0017",
+    "ground_truth": "suspicious",
+    "scenario_id": "privilege-context",
+    "scenario_type": "suspicious_privilege_escalation_context"
+  },
+  {
+    "event_id": "demo-event-0018",
+    "ground_truth": "suspicious",
+    "scenario_id": "privilege-context",
+    "scenario_type": "suspicious_privilege_escalation_context"
+  },
+  {
+    "event_id": "demo-event-0019",
+    "ground_truth": "benign",
+    "scenario_id": "privacy-demo",
+    "scenario_type": "sensitive_value_pseudonymization"
+  }
+]

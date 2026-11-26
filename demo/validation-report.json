@@ -1,0 +1,13 @@
+{
+  "accepted_cloud_payloads_checked": 5,
+  "alerts_checked": 5,
+  "cloud_requests_made": 0,
+  "events_checked": 19,
+  "expected_cloud_rejections_checked": 2,
+  "fixture_version": "1",
+  "ground_truth_separate": true,
+  "parser_cases_checked": 3,
+  "pseudonym_mappings_exported": false,
+  "real_loghub_data_exported": false,
+  "valid": true
+}

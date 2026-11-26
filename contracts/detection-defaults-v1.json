@@ -1,0 +1,23 @@
+{
+  "r01_min_failed_attempts": 5,
+  "r01_window_seconds": 600,
+  "r02_min_prior_failures": 3,
+  "r02_window_seconds": 900,
+  "r03_min_invalid_attempts": 4,
+  "r03_window_seconds": 600,
+  "r04_min_failed_attempts": 5,
+  "r04_min_distinct_accounts": 5,
+  "r04_window_seconds": 600,
+  "r05_window_seconds": 900,
+  "r06_min_auth_events": 12,
+  "r06_mad_multiplier": 3.0,
+  "r06_window_seconds": 600,
+  "r07_min_errors": 6,
+  "r07_window_seconds": 300,
+  "duplicate_attempt_window_seconds": 3,
+  "trusted_privilege_users": [
+    "ops-admin",
+    "backup-admin",
+    "root"
+  ]
+}

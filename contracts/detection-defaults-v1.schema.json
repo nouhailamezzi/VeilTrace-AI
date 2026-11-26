@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://veiltrace-ai.example/contracts/detection-defaults-v1.schema.json",
+  "title": "VeilTrace detection defaults v1",
+  "type": "object",
+  "required": [
+    "r01_min_failed_attempts",
+    "r01_window_seconds",
+    "r02_min_prior_failures",
+    "r02_window_seconds",
+    "r03_min_invalid_attempts",
+    "r03_window_seconds",
+    "r04_min_failed_attempts",
+    "r04_min_distinct_accounts",
+    "r04_window_seconds",
+    "r05_window_seconds",
+    "r06_min_auth_events",
+    "r06_mad_multiplier",
+    "r06_window_seconds",
+    "r07_min_errors",
+    "r07_window_seconds",
+    "duplicate_attempt_window_seconds",
+    "trusted_privilege_users"
+  ],
+  "properties": {
+    "r01_min_failed_attempts": {"type": "integer", "minimum": 1},
+    "r01_window_seconds": {"type": "integer", "minimum": 1},
+    "r02_min_prior_failures": {"type": "integer", "minimum": 1},
+    "r02_window_seconds": {"type": "integer", "minimum": 1},
+    "r03_min_invalid_attempts": {"type": "integer", "minimum": 1},
+    "r03_window_seconds": {"type": "integer", "minimum": 1},
+    "r04_min_failed_attempts": {"type": "integer", "minimum": 1},
+    "r04_min_distinct_accounts": {"type": "integer", "minimum": 1},
+    "r04_window_seconds": {"type": "integer", "minimum": 1},
+    "r05_window_seconds": {"type": "integer", "minimum": 1},
+    "r06_min_auth_events": {"type": "integer", "minimum": 1},
+    "r06_mad_multiplier": {"type": "number", "exclusiveMinimum": 0},
+    "r06_window_seconds": {"type": "integer", "minimum": 1},
+    "r07_min_errors": {"type": "integer", "minimum": 1},
+    "r07_window_seconds": {"type": "integer", "minimum": 1},
+    "duplicate_attempt_window_seconds": {"type": "integer", "minimum": 1},
+    "trusted_privilege_users": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "additionalProperties": false
+}

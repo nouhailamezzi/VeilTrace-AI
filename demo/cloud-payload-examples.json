@@ -1,0 +1,105 @@
+{
+  "accepted_payloads": [
+    {
+      "category": "security",
+      "entities": {
+        "source_ip": "IP_A5D3C0DE_001",
+        "username": "USER_A5D3C0DE_001"
+      },
+      "event_count": 2,
+      "evidence_summary": "Suspicious privilege escalation indicators: Correlated privilege escalation, sensitive-target, and denial or elevated-context evidence requires analyst review.",
+      "relative_time": {
+        "basis": "source_relative_wall_clock",
+        "delta_from_previous_seconds": 20,
+        "elapsed_seconds": 20
+      },
+      "rule_id": "R05",
+      "schema_version": "1",
+      "severity": "high",
+      "source": "Linux"
+    },
+    {
+      "category": "security",
+      "entities": {
+        "source_ip": "IP_A5D3C0DE_002"
+      },
+      "event_count": 5,
+      "evidence_summary": "Repeated failed logins from one source: Observed 5 distinct failed authentication attempt(s) from one source in the configured time window.",
+      "relative_time": {
+        "basis": "source_relative_wall_clock",
+        "delta_from_previous_seconds": 40,
+        "elapsed_seconds": 760
+      },
+      "rule_id": "R01",
+      "schema_version": "1",
+      "severity": "medium",
+      "source": "OpenSSH"
+    },
+    {
+      "category": "security",
+      "entities": {
+        "source_ip": "IP_A5D3C0DE_003"
+      },
+      "event_count": 5,
+      "evidence_summary": "Repeated failed logins from one source: Observed 5 distinct failed authentication attempt(s) from one source in the configured time window.",
+      "relative_time": {
+        "basis": "source_relative_wall_clock",
+        "delta_from_previous_seconds": 30,
+        "elapsed_seconds": 1920
+      },
+      "rule_id": "R01",
+      "schema_version": "1",
+      "severity": "medium",
+      "source": "OpenSSH"
+    },
+    {
+      "category": "security",
+      "entities": {
+        "source_ip": "IP_A5D3C0DE_004",
+        "username": "USER_A5D3C0DE_002"
+      },
+      "event_count": 4,
+      "evidence_summary": "Successful login following repeated failures: A successful authentication followed repeated recent failure attempts for the same account and source.",
+      "relative_time": {
+        "basis": "source_relative_wall_clock",
+        "delta_from_previous_seconds": 30,
+        "elapsed_seconds": 1290
+      },
+      "rule_id": "R02",
+      "schema_version": "1",
+      "severity": "high",
+      "source": "OpenSSH"
+    },
+    {
+      "category": "security",
+      "entities": {
+        "source_ip": "IP_A5D3C0DE_003"
+      },
+      "event_count": 5,
+      "evidence_summary": "Authentication failures across multiple accounts: Observed 5 authentication failure(s) across multiple accounts from one source.",
+      "relative_time": {
+        "basis": "source_relative_wall_clock",
+        "delta_from_previous_seconds": 30,
+        "elapsed_seconds": 1920
+      },
+      "rule_id": "R04",
+      "schema_version": "1",
+      "severity": "high",
+      "source": "OpenSSH"
+    }
+  ],
+  "notice": "Examples only; these objects do not grant authorization or trigger network requests.",
+  "rejections": [
+    {
+      "case": "missing_authorization",
+      "reason": "explicit cloud authorization is required",
+      "rejected": true
+    },
+    {
+      "case": "residual_sensitive_information",
+      "reason": "sensitive content remains in cloud payload",
+      "rejected": true
+    }
+  ],
+  "schema_version": "1"
+}

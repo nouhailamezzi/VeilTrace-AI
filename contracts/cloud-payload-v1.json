@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://veiltrace-ai.example/contracts/cloud-payload-v1.json",
+  "title": "VeilTrace minimized cloud-analysis payload v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "rule_id",
+    "severity",
+    "category",
+    "source",
+    "entities",
+    "event_count",
+    "relative_time",
+    "evidence_summary"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1"
+    },
+    "rule_id": {
+      "type": "string",
+      "enum": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "security",
+        "operational_anomaly"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "OpenSSH",
+        "Linux",
+        "Apache"
+      ]
+    },
+    "entities": {
+      "type": "object",
+      "properties": {
+        "source_ip": {
+          "type": "string",
+          "pattern": "^IP_[A-F0-9]{8}_[0-9]{3,}$"
+        },
+        "username": {
+          "type": "string",
+          "pattern": "^USER_[A-F0-9]{8}_[0-9]{3,}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "event_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "relative_time": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "basis"
+          ],
+          "properties": {
+            "elapsed_seconds": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "delta_from_previous_seconds": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "basis": {
+              "type": "string",
+              "enum": [
+                "month_day_time_without_year_or_timezone",
+                "timezone_naive_wall_clock",
+                "source_relative_wall_clock"
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "anyOf": [
+            {
+              "required": [
+                "elapsed_seconds"
+              ],
+              "properties": {
+                "elapsed_seconds": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            },
+            {
+              "required": [
+                "delta_from_previous_seconds"
+              ],
+              "properties": {
+                "delta_from_previous_seconds": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "evidence_summary": {
+      "type": "string",
+      "description": "Must also pass local sensitive-content scanning; JSON Schema cannot perform that semantic check."
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,23 @@
+{
+  "alert_count": 5,
+  "alert_counts_by_rule": {
+    "R01": 2,
+    "R02": 1,
+    "R04": 1,
+    "R05": 1
+  },
+  "cloud_requests_made": 0,
+  "data_is_fictional": true,
+  "event_count": 19,
+  "operational_anomaly_count": 0,
+  "scenario_event_counts": {
+    "normal_authentication": 2,
+    "password_spraying_indicator": 5,
+    "repeated_failed_logins": 5,
+    "sensitive_value_pseudonymization": 1,
+    "success_after_repeated_failures": 4,
+    "suspicious_privilege_escalation_context": 2
+  },
+  "schema_version": "1",
+  "security_alert_count": 5
+}

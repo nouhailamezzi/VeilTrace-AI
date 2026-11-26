@@ -1,0 +1,113 @@
+[
+  {
+    "alert_id": "alert-r05-0888aa3ce6e51cef",
+    "category": "security",
+    "description": "Correlated privilege escalation, sensitive-target, and denial or elevated-context evidence requires analyst review.",
+    "detection_method": "deterministic_rule",
+    "event_count": 2,
+    "evidence_event_ids": [
+      "demo-event-0017",
+      "demo-event-0018"
+    ],
+    "recommended_action": "Review privilege audit records and the requested target; verify authorization before taking action.",
+    "rule_id": "R05",
+    "rule_name": "Suspicious privilege escalation indicators",
+    "severity": "high",
+    "source": "Linux",
+    "source_ip": "192.0.2.51",
+    "timestamp": "2025-02-01T00:40:20+00:00",
+    "timestamp_quality": "complete_with_timezone",
+    "username": "build-bot"
+  },
+  {
+    "alert_id": "alert-r01-aeaa15c54c1ff1ed",
+    "category": "security",
+    "description": "Observed 5 distinct failed authentication attempt(s) from one source in the configured time window.",
+    "detection_method": "deterministic_rule",
+    "event_count": 5,
+    "evidence_event_ids": [
+      "demo-event-0003",
+      "demo-event-0004",
+      "demo-event-0005",
+      "demo-event-0006",
+      "demo-event-0007"
+    ],
+    "recommended_action": "Review the source and authentication evidence; apply access controls only after confirming the activity.",
+    "rule_id": "R01",
+    "rule_name": "Repeated failed logins from one source",
+    "severity": "medium",
+    "source": "OpenSSH",
+    "source_ip": "192.0.2.21",
+    "timestamp": "2025-02-01T00:12:40+00:00",
+    "timestamp_quality": "complete_with_timezone",
+    "username": null
+  },
+  {
+    "alert_id": "alert-r01-6fbe792f2538abde",
+    "category": "security",
+    "description": "Observed 5 distinct failed authentication attempt(s) from one source in the configured time window.",
+    "detection_method": "deterministic_rule",
+    "event_count": 5,
+    "evidence_event_ids": [
+      "demo-event-0012",
+      "demo-event-0013",
+      "demo-event-0014",
+      "demo-event-0015",
+      "demo-event-0016"
+    ],
+    "recommended_action": "Review the source and authentication evidence; apply access controls only after confirming the activity.",
+    "rule_id": "R01",
+    "rule_name": "Repeated failed logins from one source",
+    "severity": "medium",
+    "source": "OpenSSH",
+    "source_ip": "203.0.113.42",
+    "timestamp": "2025-02-01T00:32:00+00:00",
+    "timestamp_quality": "complete_with_timezone",
+    "username": null
+  },
+  {
+    "alert_id": "alert-r02-2b7fd47ad9c95865",
+    "category": "security",
+    "description": "A successful authentication followed repeated recent failure attempts for the same account and source.",
+    "detection_method": "deterministic_rule",
+    "event_count": 4,
+    "evidence_event_ids": [
+      "demo-event-0008",
+      "demo-event-0009",
+      "demo-event-0010",
+      "demo-event-0011"
+    ],
+    "recommended_action": "Review the account and preceding failures promptly; verify the successful login with the account owner.",
+    "rule_id": "R02",
+    "rule_name": "Successful login following repeated failures",
+    "severity": "high",
+    "source": "OpenSSH",
+    "source_ip": "198.51.100.30",
+    "timestamp": "2025-02-01T00:21:30+00:00",
+    "timestamp_quality": "complete_with_timezone",
+    "username": "returning-demo"
+  },
+  {
+    "alert_id": "alert-r04-47bdb70fd6808440",
+    "category": "security",
+    "description": "Observed 5 authentication failure(s) across multiple accounts from one source.",
+    "detection_method": "deterministic_rule",
+    "event_count": 5,
+    "evidence_event_ids": [
+      "demo-event-0012",
+      "demo-event-0013",
+      "demo-event-0014",
+      "demo-event-0015",
+      "demo-event-0016"
+    ],
+    "recommended_action": "Review for password-spraying behavior and apply proportionate authentication protections if confirmed.",
+    "rule_id": "R04",
+    "rule_name": "Authentication failures across multiple accounts",
+    "severity": "high",
+    "source": "OpenSSH",
+    "source_ip": "203.0.113.42",
+    "timestamp": "2025-02-01T00:32:00+00:00",
+    "timestamp_quality": "complete_with_timezone",
+    "username": null
+  }
+]

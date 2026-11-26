@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://veiltrace-ai.example/contracts/alert-v1.json",
+  "title": "VeilTrace detection alert v1",
+  "type": "object",
+  "required": [
+    "alert_id",
+    "rule_id",
+    "rule_name",
+    "category",
+    "severity",
+    "source",
+    "timestamp",
+    "timestamp_quality",
+    "source_ip",
+    "username",
+    "event_count",
+    "evidence_event_ids",
+    "description",
+    "recommended_action",
+    "detection_method"
+  ],
+  "properties": {
+    "alert_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rule_id": {
+      "type": "string",
+      "enum": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07"
+      ]
+    },
+    "rule_name": {
+      "type": "string",
+      "enum": [
+        "Repeated failed logins from one source",
+        "Successful login following repeated failures",
+        "Repeated invalid username attempts",
+        "Authentication failures across multiple accounts",
+        "Suspicious privilege escalation indicators",
+        "Authentication activity above baseline",
+        "Repeated application errors"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "security",
+        "operational_anomaly"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "OpenSSH",
+        "Linux",
+        "Apache"
+      ]
+    },
+    "timestamp": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "May be timezone-naive when the source has no timezone."
+    },
+    "timestamp_quality": {
+      "type": "string",
+      "enum": [
+        "complete_with_timezone",
+        "timezone_unknown",
+        "source_relative_wall_clock",
+        "unknown"
+      ]
+    },
+    "source_ip": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "username": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "event_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "evidence_event_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "description": {
+      "type": "string"
+    },
+    "recommended_action": {
+      "type": "string"
+    },
+    "detection_method": {
+      "type": "string",
+      "const": "deterministic_rule"
+    }
+  },
+  "additionalProperties": false
+}

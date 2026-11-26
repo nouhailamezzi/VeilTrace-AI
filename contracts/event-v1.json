@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://veiltrace-ai.example/contracts/event-v1.json",
+  "title": "VeilTrace normalized event v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "source",
+    "timestamp",
+    "event_type",
+    "username",
+    "source_ip",
+    "status",
+    "message",
+    "metadata"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "event_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "username": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_ip": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "success",
+        "failure",
+        null
+      ]
+    },
+    "message": {
+      "type": "string",
+      "minLength": 1
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Source-specific parser metadata; its keys are intentionally extensible."
+    }
+  },
+  "additionalProperties": false
+}
